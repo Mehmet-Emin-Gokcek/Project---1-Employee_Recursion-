@@ -44,7 +44,6 @@ public class Employee {
 
 
     public void fileRead(String filename) {
-        Employee emp = new Employee();//calling Employee class
 
         try (BufferedReader br = new BufferedReader(new FileReader(filename))) {
 
@@ -57,14 +56,14 @@ public class Employee {
                     String splitted2 = splitted[1]; //manager name
 
                     if (!splitted1.equals("Name") && !splitted2.equals("Manager")) {
-                        Employee employee1 = emp.createEmployee(splitted1, splitted2); //call for object creation
+                        Employee employee1 = createEmployee(splitted1, splitted2); //call for object creation
                         employeeList.add(employee1);// add employee object to the list
                     }
                 }
 
                 else if (splitted.length == 1) {
                     String splitted1 = splitted[0];
-                    Employee employee1 = emp.createEmployee(splitted1 , ""); //call for object creation
+                    Employee employee1 = createEmployee(splitted1 , ""); //call for object creation
                     employeeList.add(employee1);// add employee object to the list
 
                 }
@@ -77,13 +76,3 @@ public class Employee {
         }
     }
 }
-
-
-
-
-
-
-
-
-
-
